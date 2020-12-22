@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10085188259172E6009AD6E1 /* Mukta-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */; };
 		101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262EE256AC80F001CBFCE /* ThroughputViewController.swift */; };
 		101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262F8256B40EB001CBFCE /* ThroughputBrain.swift */; };
 		10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10126306256B70F5001CBFCE /* ShiftInfo.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mukta-ExtraLight.ttf"; sourceTree = "<group>"; };
 		101262EE256AC80F001CBFCE /* ThroughputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputViewController.swift; sourceTree = "<group>"; };
 		101262F8256B40EB001CBFCE /* ThroughputBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputBrain.swift; sourceTree = "<group>"; };
 		10126306256B70F5001CBFCE /* ShiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftInfo.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10085186259172B4009AD6E1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		10DCBBC2256A3520009A74CD = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 			children = (
 				10DCBBE5256A3526009A74CD /* Feedback_BuilderTests.swift */,
 				10DCBBE7256A3526009A74CD /* Info.plist */,
+				10085186259172B4009AD6E1 /* Fonts */,
 			);
 			path = "Feedback BuilderTests";
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 				10DCBBDB256A3525009A74CD /* LaunchScreen.storyboard in Resources */,
 				10BAE72925757229006D8513 /* Assets.xcassets in Resources */,
 				10DCBBD6256A3520009A74CD /* Main.storyboard in Resources */,
+				10085188259172E6009AD6E1 /* Mukta-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
