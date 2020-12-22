@@ -176,6 +176,12 @@
                     <tabBarItem key="tabBarItem" title="Home" id="KYb-Of-O0w">
                         <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="quoteOfTheDayContent" destination="FWY-dY-5Y9" id="Ss2-6X-Ly4"/>
+                        <outlet property="todaysDate" destination="HkB-q9-Xbl" id="xp6-wK-k0p"/>
+                        <outlet property="weatherImage" destination="JqK-dW-2Vq" id="1YN-i8-zZ6"/>
+                        <outlet property="weatherTemp" destination="APw-a8-bw7" id="kdi-Wd-YIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK6-5X-d6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

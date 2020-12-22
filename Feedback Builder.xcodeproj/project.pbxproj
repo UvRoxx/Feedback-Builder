@@ -10,6 +10,7 @@
 		10085188259172E6009AD6E1 /* Mukta-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */; };
 		100851932591A44B009AD6E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851922591A44B009AD6E1 /* HomeViewController.swift */; };
 		100851982591AC0C009AD6E1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851972591AC0C009AD6E1 /* MainTabBarController.swift */; };
+		1008519D2591C3E7009AD6E1 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1008519C2591C3E7009AD6E1 /* DateAndTime.swift */; };
 		101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262EE256AC80F001CBFCE /* ThroughputViewController.swift */; };
 		101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262F8256B40EB001CBFCE /* ThroughputBrain.swift */; };
 		10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10126306256B70F5001CBFCE /* ShiftInfo.swift */; };
@@ -55,6 +56,7 @@
 		10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mukta-ExtraLight.ttf"; sourceTree = "<group>"; };
 		100851922591A44B009AD6E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		100851972591AC0C009AD6E1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1008519C2591C3E7009AD6E1 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
 		101262EE256AC80F001CBFCE /* ThroughputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputViewController.swift; sourceTree = "<group>"; };
 		101262F8256B40EB001CBFCE /* ThroughputBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputBrain.swift; sourceTree = "<group>"; };
 		10126306256B70F5001CBFCE /* ShiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftInfo.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				10CA0EAB2575D57000070E8B /* SenderSettingsBrain.swift */,
 				10B215062578D954006AF852 /* EmailBrain.swift */,
 				10B2154C2579097A006AF852 /* ShiftAnalyticsBuilder.swift */,
+				1008519C2591C3E7009AD6E1 /* DateAndTime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1008519D2591C3E7009AD6E1 /* DateAndTime.swift in Sources */,
 				101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */,
 				1012631A256B819E001CBFCE /* CommentViewController.swift in Sources */,
 				10B2154D2579097A006AF852 /* ShiftAnalyticsBuilder.swift in Sources */,
