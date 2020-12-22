@@ -43,7 +43,7 @@ func parseJSON(_ quoteData:Data)->String{
 
     do{
         let response = try decoder.decode(QuoteData.self, from: quoteData)
-        print(response)
+        
         return response.content
        
     
