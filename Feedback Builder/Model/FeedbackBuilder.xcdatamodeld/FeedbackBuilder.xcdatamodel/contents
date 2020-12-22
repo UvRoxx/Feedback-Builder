@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Email" representedClassName="Email" syncable="YES" codeGenerationType="class">
+        <attribute name="emailInfo" optional="YES" attributeType="Transformable"/>
+    </entity>
+    <entity name="SenderInfo" representedClassName="SenderInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="senderName" optional="YES" attributeType="String" defaultValueString="Shift Manager"/>
+    </entity>
+    <elements>
+        <element name="Email" positionX="-36" positionY="18" width="128" height="44"/>
+        <element name="SenderInfo" positionX="-54" positionY="-9" width="128" height="44"/>
+    </elements>
+</model>
