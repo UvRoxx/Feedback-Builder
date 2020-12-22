@@ -11,6 +11,9 @@
 		100851932591A44B009AD6E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851922591A44B009AD6E1 /* HomeViewController.swift */; };
 		100851982591AC0C009AD6E1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851972591AC0C009AD6E1 /* MainTabBarController.swift */; };
 		1008519D2591C3E7009AD6E1 /* DateAndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1008519C2591C3E7009AD6E1 /* DateAndTime.swift */; };
+		100851AB2591C62D009AD6E1 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851AA2591C62D009AD6E1 /* WeatherManager.swift */; };
+		100851B02591C652009AD6E1 /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851AF2591C652009AD6E1 /* QuoteManager.swift */; };
+		100851B52591C8C3009AD6E1 /* QuoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851B42591C8C3009AD6E1 /* QuoteData.swift */; };
 		101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262EE256AC80F001CBFCE /* ThroughputViewController.swift */; };
 		101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262F8256B40EB001CBFCE /* ThroughputBrain.swift */; };
 		10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10126306256B70F5001CBFCE /* ShiftInfo.swift */; };
@@ -57,6 +60,9 @@
 		100851922591A44B009AD6E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		100851972591AC0C009AD6E1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1008519C2591C3E7009AD6E1 /* DateAndTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTime.swift; sourceTree = "<group>"; };
+		100851AA2591C62D009AD6E1 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		100851AF2591C652009AD6E1 /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
+		100851B42591C8C3009AD6E1 /* QuoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteData.swift; sourceTree = "<group>"; };
 		101262EE256AC80F001CBFCE /* ThroughputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputViewController.swift; sourceTree = "<group>"; };
 		101262F8256B40EB001CBFCE /* ThroughputBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputBrain.swift; sourceTree = "<group>"; };
 		10126306256B70F5001CBFCE /* ShiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftInfo.swift; sourceTree = "<group>"; };
@@ -210,6 +216,9 @@
 				10B215062578D954006AF852 /* EmailBrain.swift */,
 				10B2154C2579097A006AF852 /* ShiftAnalyticsBuilder.swift */,
 				1008519C2591C3E7009AD6E1 /* DateAndTime.swift */,
+				100851AA2591C62D009AD6E1 /* WeatherManager.swift */,
+				100851AF2591C652009AD6E1 /* QuoteManager.swift */,
+				100851B42591C8C3009AD6E1 /* QuoteData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +357,7 @@
 				1008519D2591C3E7009AD6E1 /* DateAndTime.swift in Sources */,
 				101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */,
 				1012631A256B819E001CBFCE /* CommentViewController.swift in Sources */,
+				100851AB2591C62D009AD6E1 /* WeatherManager.swift in Sources */,
 				10B2154D2579097A006AF852 /* ShiftAnalyticsBuilder.swift in Sources */,
 				10CA0E9F2575BDAE00070E8B /* FeedbackBuilder.xcdatamodeld in Sources */,
 				10CA0EA72575C08C00070E8B /* SenderSettingController.swift in Sources */,
@@ -356,10 +366,12 @@
 				10DCBBD3256A3520009A74CD /* NavigationViewController.swift in Sources */,
 				10B215072578D954006AF852 /* EmailBrain.swift in Sources */,
 				10B21548257901AD006AF852 /* SettingsViewController.swift in Sources */,
+				100851B52591C8C3009AD6E1 /* QuoteData.swift in Sources */,
 				10DCBBCF256A3520009A74CD /* AppDelegate.swift in Sources */,
 				10B215022578D87D006AF852 /* EmailViewController.swift in Sources */,
 				10CA0EAC2575D57000070E8B /* SenderSettingsBrain.swift in Sources */,
 				100851982591AC0C009AD6E1 /* MainTabBarController.swift in Sources */,
+				100851B02591C652009AD6E1 /* QuoteManager.swift in Sources */,
 				10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */,
 				101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */,
 				101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */,
