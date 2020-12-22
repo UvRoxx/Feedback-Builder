@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4aP-LZ-R2J">
     <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -97,49 +97,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKx-b1-IPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1488" y="-645"/>
+            <point key="canvasLocation" x="-1541" y="35"/>
         </scene>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="h8J-kb-LcO">
             <objects>
-                <viewController id="U6N-Hv-QOZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U6N-Hv-QOZ" customClass="HomeViewController" customModule="Feedback_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZX-N9-Fq2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuesday March 23 1999" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkB-q9-Xbl">
-                                <rect key="frame" x="20" y="60" width="374" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday March 23 1999" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkB-q9-Xbl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="58.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Mukta-ExtraLight" family="Mukta" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JqK-dW-2Vq">
-                                <rect key="frame" x="60" y="113.66666666666697" width="294" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JqK-dW-2Vq">
+                                <rect key="frame" x="0.0" y="113" width="414" height="151"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ktR-f4-Gbx"/>
+                                </constraints>
                                 <imageReference key="image" image="cloud.rain.fill" catalog="system" renderingMode="original"/>
                             </imageView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="Ns1-VG-6Hu">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="S9O-cP-49J"/>
-                                    <tabBarItem systemItem="more" id="UVg-Fv-Vqd"/>
-                                </items>
-                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APw-a8-bw7">
+                                <rect key="frame" x="0.0" y="262.33333333333331" width="414" height="78"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="63"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5wl-fi-Xrt"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="APw-a8-bw7" firstAttribute="top" secondItem="JqK-dW-2Vq" secondAttribute="bottom" id="7rA-ih-ALI"/>
+                            <constraint firstItem="HkB-q9-Xbl" firstAttribute="top" secondItem="5wl-fi-Xrt" secondAttribute="top" id="83Z-qf-h8L"/>
+                            <constraint firstItem="APw-a8-bw7" firstAttribute="leading" secondItem="5wl-fi-Xrt" secondAttribute="leading" id="GKh-eF-plk"/>
+                            <constraint firstItem="JqK-dW-2Vq" firstAttribute="top" secondItem="HkB-q9-Xbl" secondAttribute="bottom" constant="10" id="GOP-zR-hVl"/>
+                            <constraint firstItem="HkB-q9-Xbl" firstAttribute="leading" secondItem="5wl-fi-Xrt" secondAttribute="leading" id="Uvp-UN-bw2"/>
+                            <constraint firstItem="5wl-fi-Xrt" firstAttribute="trailing" secondItem="APw-a8-bw7" secondAttribute="trailing" id="XR4-Ka-9hz"/>
+                            <constraint firstItem="JqK-dW-2Vq" firstAttribute="leading" secondItem="5wl-fi-Xrt" secondAttribute="leading" id="dkE-hH-xaD"/>
+                            <constraint firstItem="5wl-fi-Xrt" firstAttribute="trailing" secondItem="JqK-dW-2Vq" secondAttribute="trailing" id="qKJ-7c-xpM"/>
+                            <constraint firstItem="5wl-fi-Xrt" firstAttribute="trailing" secondItem="HkB-q9-Xbl" secondAttribute="trailing" id="z2y-jD-vOG"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" id="KYb-Of-O0w">
+                        <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KK6-5X-d6k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-513.04347826086962" y="-653.57142857142856"/>
+            <point key="canvasLocation" x="-410" y="-670"/>
         </scene>
         <!--Sender Setting Controller-->
         <scene sceneID="nWS-lB-TVw">
@@ -202,9 +214,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKG-pq-yak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2555" y="36"/>
+            <point key="canvasLocation" x="-1542" y="768"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="mNn-VU-p8E">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xdn-Nl-idp" customClass="SettingsViewController" customModule="Feedback_Builder" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,35 +262,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Olw-SB-Dbz">
-                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="wfV-PU-sVp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="28"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="KTH-gP-aH2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qc8-TY-exP"/>
                         <color key="backgroundColor" red="0.038819342850000001" green="0.26736330990000001" blue="0.70592111349999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="K76-an-V4s" firstAttribute="leading" secondItem="qc8-TY-exP" secondAttribute="leading" id="71D-1Y-MCP"/>
                             <constraint firstItem="K76-an-V4s" firstAttribute="top" secondItem="qc8-TY-exP" secondAttribute="top" id="Xou-ms-7xP"/>
-                            <constraint firstAttribute="bottom" secondItem="Olw-SB-Dbz" secondAttribute="bottom" id="ceQ-kq-SHY"/>
                             <constraint firstItem="qNA-f6-PEV" firstAttribute="centerX" secondItem="sHW-jE-IWz" secondAttribute="centerX" id="j1D-en-Zam"/>
-                            <constraint firstItem="Olw-SB-Dbz" firstAttribute="leading" secondItem="qc8-TY-exP" secondAttribute="leading" id="lI4-vd-ggI"/>
                             <constraint firstItem="qNA-f6-PEV" firstAttribute="centerY" secondItem="sHW-jE-IWz" secondAttribute="centerY" id="lus-cb-B60"/>
                             <constraint firstItem="qc8-TY-exP" firstAttribute="trailing" secondItem="K76-an-V4s" secondAttribute="trailing" id="nz1-am-gIF"/>
-                            <constraint firstItem="Olw-SB-Dbz" firstAttribute="trailing" secondItem="qc8-TY-exP" secondAttribute="trailing" id="uy4-Ev-0yU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="OCH-8y-VAr">
+                        <imageReference key="image" image="gear" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
                         <outletCollection property="buttons" destination="5Yn-b9-iio" collectionClass="NSMutableArray" id="ovx-0o-xY8"/>
                         <outletCollection property="buttons" destination="gbK-nK-OiE" collectionClass="NSMutableArray" id="zT5-9Z-Bx8"/>
@@ -286,9 +283,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulJ-ZQ-2ZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1488" y="35"/>
+            <point key="canvasLocation" x="-1481" y="-670"/>
         </scene>
-        <!--Navigation View Controller-->
+        <!--Feedback-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NavigationViewController" customModule="Feedback_Builder" customModuleProvider="target" sceneMemberID="viewController">
@@ -339,28 +336,13 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-GU-meW">
                                 <rect key="frame" x="166.33333333333334" y="595" width="81.333333333333343" height="78.666666666666629"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <imageReference key="image" image="paperplane.circle.fill" catalog="system" symbolScale="large" renderingMode="original"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="56" scale="large"/>
                                 </state>
                                 <connections>
                                     <action selector="sendButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bsw-gl-F7r"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FE3-vK-JLW">
-                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="x3F-7L-ilg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="28"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
-                                </state>
-                                <connections>
-                                    <action selector="settings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3T-hK-AjO"/>
-                                    <segue destination="Xdn-Nl-idp" kind="presentation" modalPresentationStyle="fullScreen" id="nyV-TE-Ieg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -374,14 +356,14 @@
                             <constraint firstItem="8bi-AE-96o" firstAttribute="centerX" secondItem="wY5-mj-d0t" secondAttribute="centerX" id="IB3-qV-Ogo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wY5-mj-d0t" secondAttribute="trailing" id="OY2-Lf-qJ0"/>
                             <constraint firstItem="fEs-GU-meW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OlZ-4q-8jf"/>
-                            <constraint firstItem="FE3-vK-JLW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SHl-Jp-0Cf"/>
-                            <constraint firstAttribute="bottom" secondItem="FE3-vK-JLW" secondAttribute="bottom" id="U9Q-ds-dr1"/>
-                            <constraint firstItem="FE3-vK-JLW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wi0-dQ-Tyz"/>
                             <constraint firstItem="8bi-AE-96o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="dCr-x9-RWU"/>
                             <constraint firstItem="8bi-AE-96o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pAE-mq-ccy"/>
                             <constraint firstItem="wY5-mj-d0t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yPt-MF-Rsm"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Feedback" id="DwK-3V-JGt">
+                        <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <connections>
                         <outletCollection property="buttonDesign" destination="2Ha-55-7RI" collectionClass="NSMutableArray" id="wzR-og-gb3"/>
                         <outletCollection property="buttonDesign" destination="NbY-Ni-x88" collectionClass="NSMutableArray" id="T4J-QB-FGC"/>
@@ -390,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="35"/>
+            <point key="canvasLocation" x="693" y="-670"/>
         </scene>
         <!--List Email View Controller-->
         <scene sceneID="0HF-Ie-OFl">
@@ -431,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxO-Le-MZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2555" y="-646"/>
+            <point key="canvasLocation" x="-1542" y="1533"/>
         </scene>
         <!--Sales Labor View Controller-->
         <scene sceneID="Ro3-0k-7cG">
@@ -530,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxi-3g-RS7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-497" y="769"/>
+            <point key="canvasLocation" x="658" y="768"/>
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="Aer-2V-BqE">
@@ -598,7 +580,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOQ-2P-vC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="500" y="769"/>
+            <point key="canvasLocation" x="693" y="1543"/>
         </scene>
         <!--Throughput View Controller-->
         <scene sceneID="o4M-HL-yKk">
@@ -817,24 +799,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01z-03-8Nu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501" y="35"/>
+            <point key="canvasLocation" x="693" y="34"/>
+        </scene>
+        <!--TabBarController-->
+        <scene sceneID="qJJ-mV-OdM">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBarController" title="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4aP-LZ-R2J" customClass="MainTabBarController" customModule="Feedback_Builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="OLt-15-dgG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AsK-3B-TfG"/>
+                        <segue destination="U6N-Hv-QOZ" kind="relationship" relationship="viewControllers" id="MWn-7m-dFw"/>
+                        <segue destination="Xdn-Nl-idp" kind="relationship" relationship="viewControllers" id="XUd-hA-Whc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qpm-BH-jma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-497" y="-1442"/>
         </scene>
     </scenes>
     <resources>
         <image name="Getter" width="1024" height="1024"/>
         <image name="cloud.rain.fill" catalog="system" width="128" height="125"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="paperplane.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <namedColor name="BackgroundColor">
-            <color red="0.37254902719999999" green="0.61568629740000003" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.37299999594688416" green="0.61599999666213989" blue="0.69800001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

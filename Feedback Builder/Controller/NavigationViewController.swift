@@ -30,7 +30,7 @@ class NavigationViewController: UIViewController {
         super.viewDidLoad()
         
         for button in buttonDesign {
-            
+           
             button.layer.cornerRadius = button.frame.size.height/2;
             button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             

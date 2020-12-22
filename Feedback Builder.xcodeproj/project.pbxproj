@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		10085188259172E6009AD6E1 /* Mukta-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */; };
+		100851932591A44B009AD6E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851922591A44B009AD6E1 /* HomeViewController.swift */; };
+		100851982591AC0C009AD6E1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851972591AC0C009AD6E1 /* MainTabBarController.swift */; };
 		101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262EE256AC80F001CBFCE /* ThroughputViewController.swift */; };
 		101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262F8256B40EB001CBFCE /* ThroughputBrain.swift */; };
 		10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10126306256B70F5001CBFCE /* ShiftInfo.swift */; };
@@ -51,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mukta-ExtraLight.ttf"; sourceTree = "<group>"; };
+		100851922591A44B009AD6E1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		100851972591AC0C009AD6E1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		101262EE256AC80F001CBFCE /* ThroughputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputViewController.swift; sourceTree = "<group>"; };
 		101262F8256B40EB001CBFCE /* ThroughputBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputBrain.swift; sourceTree = "<group>"; };
 		10126306256B70F5001CBFCE /* ShiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftInfo.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 				10B215012578D87D006AF852 /* EmailViewController.swift */,
 				10B215422578F76C006AF852 /* ListEmailViewController.swift */,
 				10B21547257901AD006AF852 /* SettingsViewController.swift */,
+				100851922591A44B009AD6E1 /* HomeViewController.swift */,
+				100851972591AC0C009AD6E1 /* MainTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				10B2154D2579097A006AF852 /* ShiftAnalyticsBuilder.swift in Sources */,
 				10CA0E9F2575BDAE00070E8B /* FeedbackBuilder.xcdatamodeld in Sources */,
 				10CA0EA72575C08C00070E8B /* SenderSettingController.swift in Sources */,
+				100851932591A44B009AD6E1 /* HomeViewController.swift in Sources */,
 				10B215432578F76C006AF852 /* ListEmailViewController.swift in Sources */,
 				10DCBBD3256A3520009A74CD /* NavigationViewController.swift in Sources */,
 				10B215072578D954006AF852 /* EmailBrain.swift in Sources */,
@@ -348,6 +355,7 @@
 				10DCBBCF256A3520009A74CD /* AppDelegate.swift in Sources */,
 				10B215022578D87D006AF852 /* EmailViewController.swift in Sources */,
 				10CA0EAC2575D57000070E8B /* SenderSettingsBrain.swift in Sources */,
+				100851982591AC0C009AD6E1 /* MainTabBarController.swift in Sources */,
 				10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */,
 				101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */,
 				101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */,
