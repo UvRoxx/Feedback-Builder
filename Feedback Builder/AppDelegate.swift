@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //Changing the UITabBarColor
         UITabBar.appearance().barTintColor = .black
-        UITabBar.appearance().tintColor = .green
+        UITabBar.appearance().tintColor = .systemTeal
         return true
     }
 
