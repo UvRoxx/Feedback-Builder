@@ -14,12 +14,13 @@
 		100851AB2591C62D009AD6E1 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851AA2591C62D009AD6E1 /* WeatherManager.swift */; };
 		100851B02591C652009AD6E1 /* QuoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851AF2591C652009AD6E1 /* QuoteManager.swift */; };
 		100851B52591C8C3009AD6E1 /* QuoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851B42591C8C3009AD6E1 /* QuoteData.swift */; };
-		100851BB25929460009AD6E1 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100851BA25929460009AD6E1 /* WeatherData.swift */; };
 		101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262EE256AC80F001CBFCE /* ThroughputViewController.swift */; };
 		101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101262F8256B40EB001CBFCE /* ThroughputBrain.swift */; };
 		10126307256B70F5001CBFCE /* ShiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10126306256B70F5001CBFCE /* ShiftInfo.swift */; };
 		1012631A256B819E001CBFCE /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10126319256B819E001CBFCE /* CommentViewController.swift */; };
 		101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101EE472256C370A00DCF73B /* SalesLaborViewController.swift */; };
+		103B7D852592C12600AC8DF0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B7D842592C12600AC8DF0 /* WeatherData.swift */; };
+		103B7D8A2593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */; };
 		10A07DF02573631100CF0463 /* EmailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A07DEF2573631100CF0463 /* EmailBuilder.swift */; };
 		10B215022578D87D006AF852 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B215012578D87D006AF852 /* EmailViewController.swift */; };
 		10B215072578D954006AF852 /* EmailBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B215062578D954006AF852 /* EmailBrain.swift */; };
@@ -64,12 +65,13 @@
 		100851AA2591C62D009AD6E1 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		100851AF2591C652009AD6E1 /* QuoteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteManager.swift; sourceTree = "<group>"; };
 		100851B42591C8C3009AD6E1 /* QuoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteData.swift; sourceTree = "<group>"; };
-		100851BA25929460009AD6E1 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		101262EE256AC80F001CBFCE /* ThroughputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputViewController.swift; sourceTree = "<group>"; };
 		101262F8256B40EB001CBFCE /* ThroughputBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThroughputBrain.swift; sourceTree = "<group>"; };
 		10126306256B70F5001CBFCE /* ShiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShiftInfo.swift; sourceTree = "<group>"; };
 		10126319256B819E001CBFCE /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		101EE472256C370A00DCF73B /* SalesLaborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesLaborViewController.swift; sourceTree = "<group>"; };
+		103B7D842592C12600AC8DF0 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NothingYouCouldDo-Regular.ttf"; sourceTree = "<group>"; };
 		10A07DEF2573631100CF0463 /* EmailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailBuilder.swift; sourceTree = "<group>"; };
 		10B215012578D87D006AF852 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		10B215062578D954006AF852 /* EmailBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailBrain.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		10085186259172B4009AD6E1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */,
 				10085187259172E6009AD6E1 /* Mukta-ExtraLight.ttf */,
 			);
 			path = Fonts;
@@ -221,7 +224,7 @@
 				100851AA2591C62D009AD6E1 /* WeatherManager.swift */,
 				100851AF2591C652009AD6E1 /* QuoteManager.swift */,
 				100851B42591C8C3009AD6E1 /* QuoteData.swift */,
-				100851BA25929460009AD6E1 /* WeatherData.swift */,
+				103B7D842592C12600AC8DF0 /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				103B7D8A2593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf in Resources */,
 				10DCBBDB256A3525009A74CD /* LaunchScreen.storyboard in Resources */,
 				10BAE72925757229006D8513 /* Assets.xcassets in Resources */,
 				10DCBBD6256A3520009A74CD /* Main.storyboard in Resources */,
@@ -379,7 +383,7 @@
 				101262EF256AC80F001CBFCE /* ThroughputViewController.swift in Sources */,
 				101262F9256B40EB001CBFCE /* ThroughputBrain.swift in Sources */,
 				10A07DF02573631100CF0463 /* EmailBuilder.swift in Sources */,
-				100851BB25929460009AD6E1 /* WeatherData.swift in Sources */,
+				103B7D852592C12600AC8DF0 /* WeatherData.swift in Sources */,
 				10DCBBD1256A3520009A74CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
