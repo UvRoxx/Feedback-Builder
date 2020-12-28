@@ -17,7 +17,7 @@ struct DateAndTime{
         let monthNum = calendar.component(.month, from: date)
         let dayNum = Calendar.current.component(.weekday, from: Date())
         let dayComponents = Calendar.current.shortWeekdaySymbols
-         return "\(dayComponents[dayNum]) \(calendar.component(.day, from: date)) \(monthComponents[monthNum-1]) \(calendar.component(.year, from: date))"
+         return "\(dayComponents[dayNum-1]) \(calendar.component(.day, from: date)) \(monthComponents[monthNum-1]) \(calendar.component(.year, from: date))"
         
     }
     
