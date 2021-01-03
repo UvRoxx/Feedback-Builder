@@ -8,18 +8,18 @@
 import UIKit
 import MessageUI
 import AudioToolbox
-import CoreData
+import RealmSwift
 
 let appVersion = "2.1"
 
 class NavigationViewController: UIViewController {
-    
+    let realm = try!Realm()
     
     var emailBuilder = EmailBuilder()
     let salesDelegate = SalesLaborViewController()
     var salesLabour = SalesLabour()
-   var emailBrain = EmailBrain()
-    
+    var emailBrain = EmailBrain()
+    let defaults = UserDefaults.standard
     @IBOutlet var buttonDesign: [UIButton]!
     
     var currentTimerData = Throughput()
@@ -108,7 +108,7 @@ class NavigationViewController: UIViewController {
         
         let composer = MFMailComposeViewController()
         composer.mailComposeDelegate = self
-        composer.setToRecipients(emailBrain.getEmailInfo())
+        composer.setToRecipients(getEmails())
         composer.setSubject("Daily Tracking Feedback- \(today)")
         composer.setMessageBody(mailBody, isHTML: false)
         
@@ -179,6 +179,15 @@ extension NavigationViewController: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true)
         present(alert, animated: true, completion: nil)
         
+    }
+    func getEmails()->[String]{
+        
+        let emails =  realm.objects(EmailInfo.self)
+        var finalEmail = [""]
+        for email in emails{
+            finalEmail.append(email.email)
+        }
+        return finalEmail
     }
 }
 

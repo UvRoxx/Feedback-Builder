@@ -6,27 +6,31 @@
 //
 
 import UIKit
-import CoreData
 import AudioToolbox
-class SenderSettingController:
+
+protocol SetUserName{
+    func getUserName(userName:String)
+}
+class UserNameSettings:
     UIViewController ,UITextFieldDelegate{
-   
-    var senderSettingsBrain = SenderSettingsBrain()
+    let defaults = UserDefaults.standard
+    var setUserNameDelegate:SetUserName?
+
     @IBOutlet weak var senderName: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         senderName.delegate = self
     }
     
-
-  
-    
     @IBAction func submitPressed(_ sender: Any) {
-        
-        senderSettingsBrain.saveUserName(senderName.text ?? "")
-        self.dismiss(animated: true, completion: nil)
+
+        if let finalName = senderName.text{
+            defaults.setValue(finalName, forKey: "userName")
+            setUserNameDelegate?.getUserName(userName: finalName)
+            self.dismiss(animated: true, completion: nil)
+
+        }
         
     }
     
@@ -49,6 +53,7 @@ class SenderSettingController:
         textField.resignFirstResponder()
         return true
     }
+    
     
 }
 

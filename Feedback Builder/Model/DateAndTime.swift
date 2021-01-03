@@ -10,7 +10,7 @@ import CoreData
 struct DateAndTime{
     let date = Date()
     let calendar = Calendar.current
-    let senderSettingsBrain = SenderSettingsBrain()
+    let defaults = UserDefaults.standard
     func getDisplayDate()->String{
         
         let monthComponents = Calendar.current.shortMonthSymbols
@@ -33,10 +33,17 @@ struct DateAndTime{
             greeting = "Good Evening"
         }
         
-        let userName = senderSettingsBrain.getUserName()
-        let firstName = userName.components(separatedBy: " ")
-        greeting = "\(greeting)\n\(firstName[0])"
-    return greeting
+     
+        if let finalName = defaults.value(forKeyPath: "userName")as?String{
+            let firstName = finalName.components(separatedBy: " ")
+                greeting = "\(greeting)\n\(firstName[0])"
+            return greeting
+
+  
+        }else{
+            return "Please set UserName From Settings"
+        }
+        
         
     }
     

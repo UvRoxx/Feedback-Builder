@@ -6,20 +6,20 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 
 class EmailViewController: UIViewController {
-    var allEmails = [""]
-    
+    var emailInfo:Results<EmailInfo>?
+    let realm = try!Realm()
     var emailBrain = EmailBrain()
     @IBOutlet weak var newEmail: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         newEmail.delegate = self
-        allEmails = emailBrain.getEmailInfo()
-        print(allEmails)
+      //  allEmails = emailBrain.getEmailInfo()
+      //  print(allEmails)
     }
     
     @IBAction func submitPressed(_ sender: UIButton) {
@@ -27,15 +27,10 @@ class EmailViewController: UIViewController {
         if let currentEmail = newEmail.text{
             if emailBrain.isValidEmail(currentEmail){
                 print("email is valid")
-                allEmails.append(currentEmail)
-                if emailBrain.saveEmail(allEmails){
-                let alert = emailBrain.emailAlert("Success", "Email Added Successfully")
-                self.present(alert, animated: true, completion: nil)
-                    newEmail.text = ""
-                }else{
-                    let alert = emailBrain.emailAlert("Error", "Email could not be added please try again")
-                    self.present(alert, animated: true, completion: nil)
-                }
+                
+                let newEmailInfo = EmailInfo()
+                newEmailInfo.email = (currentEmail)
+                save(newEmailInfo)
             }else{
                 print("email is invalid")
                 let alert = emailBrain.emailAlert("Error", "Email is Invalid please check the info and try again")
@@ -47,10 +42,21 @@ class EmailViewController: UIViewController {
         
     }
     @IBAction func showEmailTable(_ sender: UIButton) {
-        let tableVC = storyboard?.instantiateViewController(identifier: "ListEmailViewController")as!ListEmailViewController
+        let tableVC = storyboard?.instantiateViewController(identifier: "ListEmailViewController")as!GetSetEmailInfo
+        tableVC.emailInfo = emailInfo
         present(tableVC, animated: true, completion: nil)
     }
     
+    func save(_ savedData:EmailInfo){
+        do{
+            try realm.write{
+                realm.add(savedData)
+                print("Save Was Successful")
+            }
+        }catch{
+            print("Error Saving Email \(error)")
+        }
+}
     
 }
 
