@@ -13,8 +13,8 @@ class Throughput{
     var dayPartTimer = [Int](repeating: 0, count: 5)
 }
 class SalesLabour{
-    var Sales:Float = 0.0
-    var Labour:Float = 0.0
+    var Sales:Float?
+    var Labour:Float?
 }
 class Comment{
  

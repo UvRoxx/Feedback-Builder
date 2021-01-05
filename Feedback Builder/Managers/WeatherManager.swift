@@ -58,7 +58,7 @@ func getWeatherIconCode(_ conditionId:Int)->String{
         case 500...531:
             return "cloud.rain.fill"
         case 600...622:
-            return "clous.snow.fill"
+            return "cloud.snow.fill"
         case 701...781:
             return "cloud.fog.fill"
         case 800:

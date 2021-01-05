@@ -8,6 +8,6 @@
 import Foundation
 import RealmSwift
 
-class EmailInfo:Object{
+class Contact:Object{
     @objc dynamic var email:String = ""
 }

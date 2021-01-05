@@ -15,8 +15,10 @@ class SalesLaborViewController: UIViewController {
     var salesDelegate:SalesLaborDelegate?
     
     var shiftSales = SalesLabour()
-    @IBOutlet weak var salesInput: UITextView!
-    @IBOutlet weak var labourInput: UITextView!
+   
+    @IBOutlet weak var salesInput: UITextField!
+    
+    @IBOutlet weak var labourInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         restoreState()
@@ -28,9 +30,8 @@ class SalesLaborViewController: UIViewController {
               done.items = [doneButton]
       
       
-              salesInput.inputAccessoryView = done
-              labourInput.inputAccessoryView = done
-        
+        salesInput.delegate = self
+        labourInput.delegate = self
         
         
     }
@@ -44,10 +45,10 @@ class SalesLaborViewController: UIViewController {
     
     @IBAction func submitPressed(_ sender: UIButton) {
         if let finalSales = salesInput.text{
-            shiftSales.Sales = Float(finalSales) ?? 0.0
+            shiftSales.Sales = Float(finalSales)
         }
         if let finalLabour = labourInput.text{
-            shiftSales.Labour = Float(finalLabour) ?? 0.0
+            shiftSales.Labour = Float(finalLabour)
         }
 
         salesDelegate?.didGetSales(salesToday: shiftSales)
@@ -58,20 +59,23 @@ class SalesLaborViewController: UIViewController {
     
     
     func restoreState(){
-        salesInput.text = String(shiftSales.Sales)
-        labourInput.text = String(shiftSales.Labour)
+        if let sales = shiftSales.Sales{
+            salesInput.text = String(sales)
+
+        }
+        if let labour = shiftSales.Labour{
+        labourInput.text = String(labour)
+    }
     }
 
    
     
     
 }
-
 extension SalesLaborViewController:UITextFieldDelegate{
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
 }
-
 

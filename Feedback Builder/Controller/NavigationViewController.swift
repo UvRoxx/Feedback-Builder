@@ -10,23 +10,29 @@ import MessageUI
 import AudioToolbox
 import RealmSwift
 
-let appVersion = "2.1"
+let appVersion = "2.5"
 
 class NavigationViewController: UIViewController {
+   
+    
     let realm = try!Realm()
+    let defaults = UserDefaults.standard
     
     var emailBuilder = EmailBuilder()
     let salesDelegate = SalesLaborViewController()
     var salesLabour = SalesLabour()
     var emailBrain = EmailBrain()
-    let defaults = UserDefaults.standard
-    @IBOutlet var buttonDesign: [UIButton]!
     
     var currentTimerData = Throughput()
     var currentComment  = Comment()
-    
     var throughput:Throughput?
-    override func viewDidLoad() {
+    
+    @IBOutlet var buttonDesign: [UIButton]!
+    
+    
+    
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         for button in buttonDesign {
@@ -40,60 +46,51 @@ class NavigationViewController: UIViewController {
     }
     //MARK: -Button Actions
     
-    @IBAction func getThroughput(_ sender: UIButton) {
-        let throughputVC = storyboard?.instantiateViewController(identifier:"ThroughputViewController") as! ThroughputViewController
-        throughputVC.timerDelegate = self
+    
+    @IBAction func buttonClicked(_ sender:UIButton){
+        switch sender.tag{
+        case 1:let throughputVC = storyboard?.instantiateViewController(identifier:VC.throughput.rawValue) as! ThroughputViewController
+            
+            throughputVC.timerDelegate = self
+            
+            throughputVC.shiftInfo = currentTimerData
+            throughputVC.modalPresentationStyle = .fullScreen
+            present(throughputVC, animated: true, completion: nil)
+            break
+       
+        case 2: let salesVC = storyboard?.instantiateViewController(identifier: VC.salesLabour.rawValue)as!SalesLaborViewController
+            
+            salesVC.salesDelegate = self
+            
+            salesVC.shiftSales = salesLabour
+            salesVC.modalPresentationStyle = .fullScreen
+            present(salesVC, animated: true, completion: nil)
+       
+        case 3: let commentVC = storyboard?.instantiateViewController(identifier:VC.comment.rawValue) as! CommentViewController
+            
+            commentVC.commentDelegate = self
+            
+            commentVC.userComment = currentComment
+            commentVC.modalPresentationStyle = .fullScreen
+            present(commentVC, animated: true, completion: nil)
+            
+        case 4: let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText)
+            print(email)//Use this to see output in VM
+            showMailComposer(emailBody: email)//Use this to see output in actual device
         
-        throughputVC.shiftInfo = currentTimerData
-        throughputVC.modalPresentationStyle = .fullScreen
-        present(throughputVC, animated: true, completion: nil)
+        default:
+            break
+        }
+        
     }
     
     
     
-    @IBAction func getComment(_ sender: UIButton) {
-        
-        let commentVC = storyboard?.instantiateViewController(identifier:"CommentViewController") as! CommentViewController
-        commentVC.commentDelegate = self
-        commentVC.userComment = currentComment
-        commentVC.modalPresentationStyle = .fullScreen
-        present(commentVC, animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func getSalesLabour(_ sender: UIButton) {
-        let salesVC = storyboard?.instantiateViewController(identifier: "SalesLaborViewController")as!SalesLaborViewController
-        salesVC.salesDelegate = self
-        salesVC.shiftSales = salesLabour
-        salesVC.modalPresentationStyle = .fullScreen
-        present(salesVC, animated: true, completion: nil)
-    }
-    
-    
-    @IBAction func sendButton(_ sender: UIButton) {
-        
 
-        let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText)
-        print(email)//Use this to see output in VM
-        showMailComposer(emailBody: email)//Use this to see output in actual device
-    }
-    
-    
-    @IBAction func settings(_ sender: Any) {
-        
-        let settingsVC = storyboard?.instantiateViewController(identifier: "SettingsViewController")as!SettingsViewController
-        present(settingsVC, animated: true, completion: nil)
-        
-    }
-    
-    
-    
-    
-    
     //MARK: -Present Mail Composer
     func showMailComposer(emailBody:String){
         guard MFMailComposeViewController.canSendMail() else {
-            let alert = emailBrain.emailAlert("Error", "Please setup your email in the mail app to send mails, thank You")
+            let alert = emailBrain.emailAlert("Error", EM.mailNotSet.rawValue)
             self.present(alert, animated: true, completion: nil)
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             //Error In Case User Cant send Error
@@ -160,16 +157,16 @@ extension NavigationViewController: MFMailComposeViewControllerDelegate {
             controller.dismiss(animated: true)
             return
         }
-        var alert:UIAlertController = emailBrain.emailAlert("Error", "Unspecified Error Occoured")
+        var alert:UIAlertController = emailBrain.emailAlert("Error", EM.unspecifiedError.rawValue)
         switch result {
         case .cancelled:
-            alert = emailBrain.emailAlert("Cancelled", "Action Cancelled")
+            alert = emailBrain.emailAlert("Cancelled", EM.actionCancelled.rawValue)
         case .failed:
-            alert = emailBrain.emailAlert("Email Not Sent", "The email was not sent please check the connection and try again")
+            alert = emailBrain.emailAlert("Email Not Sent",EM.emailNotSent.rawValue)
         case .saved:
-            alert = emailBrain.emailAlert("Saved", "The email has been saved and can be accessed from the draft section of the mail app")
+            alert = emailBrain.emailAlert("Saved", EM.movedToDraft.rawValue)
         case .sent:
-            alert = emailBrain.emailAlert("Success", "Email Sent Successfully")
+            alert = emailBrain.emailAlert("Success", EM.emailSentSuccessfully.rawValue)
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
         @unknown default:
             break
@@ -182,7 +179,7 @@ extension NavigationViewController: MFMailComposeViewControllerDelegate {
     }
     func getEmails()->[String]{
         
-        let emails =  realm.objects(EmailInfo.self)
+        let emails =  realm.objects(Contact.self)
         var finalEmail = [""]
         for email in emails{
             finalEmail.append(email.email)

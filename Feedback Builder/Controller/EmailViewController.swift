@@ -10,7 +10,7 @@ import RealmSwift
 
 
 class EmailViewController: UIViewController {
-    var emailInfo:Results<EmailInfo>?
+    var emailInfo:Results<Contact>?
     let realm = try!Realm()
     var emailBrain = EmailBrain()
     @IBOutlet weak var newEmail: UITextField!
@@ -28,7 +28,7 @@ class EmailViewController: UIViewController {
             if emailBrain.isValidEmail(currentEmail){
                 print("email is valid")
                 
-                let newEmailInfo = EmailInfo()
+                let newEmailInfo = Contact()
                 newEmailInfo.email = (currentEmail)
                 save(newEmailInfo)
             }else{
@@ -42,12 +42,12 @@ class EmailViewController: UIViewController {
         
     }
     @IBAction func showEmailTable(_ sender: UIButton) {
-        let tableVC = storyboard?.instantiateViewController(identifier: "ListEmailViewController")as!GetSetEmailInfo
+        let tableVC = storyboard?.instantiateViewController(identifier: "ListEmailViewController")as!ContactsTable
         tableVC.emailInfo = emailInfo
         present(tableVC, animated: true, completion: nil)
     }
     
-    func save(_ savedData:EmailInfo){
+    func save(_ savedData:Contact){
         do{
             try realm.write{
                 realm.add(savedData)

@@ -33,24 +33,21 @@ class UserNameSettings:
         }
         
     }
-    
-
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+ 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       
         if senderName.text != ""{
             senderName.placeholder = "Sender Name"
-            return true
+           
         }
         else
          
         {
             senderName.placeholder = "Please Enter Name"
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-            return false
+           
         }
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       
-        textField.resignFirstResponder()
+        senderName.resignFirstResponder()
         return true
     }
     

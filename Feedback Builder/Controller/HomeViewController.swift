@@ -15,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var todaysDate: UILabel!
     @IBOutlet weak var greetingsText: UILabel!
     @IBOutlet weak var locationName: UILabel!
+    
+    
     let defaults = UserDefaults.standard
     
     override func viewWillAppear(_ animated: Bool) {

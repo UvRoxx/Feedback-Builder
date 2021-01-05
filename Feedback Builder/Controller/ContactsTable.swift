@@ -7,9 +7,9 @@
 
 import UIKit
 import RealmSwift
-class GetSetEmailInfo: UIViewController,UITableViewDelegate, UITableViewDataSource{
+class ContactsTable: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
-    var emailInfo:Results<EmailInfo>?
+    var emailInfo:Results<Contact>?
     let realm = try!Realm()
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -50,6 +50,6 @@ class GetSetEmailInfo: UIViewController,UITableViewDelegate, UITableViewDataSour
     
 
     func load(){
-        emailInfo = realm.objects(EmailInfo.self)
+        emailInfo = realm.objects(Contact.self)
     }
 }
