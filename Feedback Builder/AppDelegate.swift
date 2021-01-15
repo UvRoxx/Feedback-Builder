@@ -14,16 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //Changing the UITabBarColor
-        //MARK:-Setting Up Relam
-        print(Realm.Configuration.defaultConfiguration.fileURL as Any)
-        do{
-            _ = try Realm()
-        }catch{
-            print("Error Initializing Relam Object \(error)")
-        }
-        
-        
+    
         
         //MARK:-Setting Bar color properties
         UITabBar.appearance().barTintColor = .black

@@ -21,6 +21,7 @@
 		101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101EE472256C370A00DCF73B /* SalesLaborViewController.swift */; };
 		103B7D852592C12600AC8DF0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B7D842592C12600AC8DF0 /* WeatherData.swift */; };
 		103B7D8A2593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */; };
+		1079FAC325B17EAC0069891A /* FeedbackModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1079FAC125B17EAC0069891A /* FeedbackModel.xcdatamodeld */; };
 		108BE54825A4522C00B3E83B /* FBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108BE54725A4522C00B3E83B /* FBErrors.swift */; };
 		108BE54D25A457FF00B3E83B /* FBControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108BE54C25A457FF00B3E83B /* FBControllers.swift */; };
 		10A07DF02573631100CF0463 /* EmailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A07DEF2573631100CF0463 /* EmailBuilder.swift */; };
@@ -78,6 +79,7 @@
 		101EE472256C370A00DCF73B /* SalesLaborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesLaborViewController.swift; sourceTree = "<group>"; };
 		103B7D842592C12600AC8DF0 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NothingYouCouldDo-Regular.ttf"; sourceTree = "<group>"; };
+		1079FAC225B17EAC0069891A /* FeedbackModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedbackModel.xcdatamodel; sourceTree = "<group>"; };
 		108BE54725A4522C00B3E83B /* FBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBErrors.swift; sourceTree = "<group>"; };
 		108BE54C25A457FF00B3E83B /* FBControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBControllers.swift; sourceTree = "<group>"; };
 		10A07DEF2573631100CF0463 /* EmailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailBuilder.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		108BE54525A4516100B3E83B /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				1079FAC125B17EAC0069891A /* FeedbackModel.xcdatamodeld */,
 				10F1FC7D25A18D07002808FD /* Contact.swift */,
 				103B7D842592C12600AC8DF0 /* WeatherData.swift */,
 				100851B42591C8C3009AD6E1 /* QuoteData.swift */,
@@ -550,6 +553,7 @@
 				10B215072578D954006AF852 /* EmailBrain.swift in Sources */,
 				10B21548257901AD006AF852 /* SettingsViewController.swift in Sources */,
 				100851B52591C8C3009AD6E1 /* QuoteData.swift in Sources */,
+				1079FAC325B17EAC0069891A /* FeedbackModel.xcdatamodeld in Sources */,
 				108BE54D25A457FF00B3E83B /* FBControllers.swift in Sources */,
 				10DCBBCF256A3520009A74CD /* AppDelegate.swift in Sources */,
 				10B215022578D87D006AF852 /* EmailViewController.swift in Sources */,
@@ -903,6 +907,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1079FAC125B17EAC0069891A /* FeedbackModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1079FAC225B17EAC0069891A /* FeedbackModel.xcdatamodel */,
+			);
+			currentVersion = 1079FAC225B17EAC0069891A /* FeedbackModel.xcdatamodel */;
+			name = FeedbackModel.xcdatamodeld;
+			path = ../FeedbackModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 10DCBBC3256A3520009A74CD /* Project object */;
 }
