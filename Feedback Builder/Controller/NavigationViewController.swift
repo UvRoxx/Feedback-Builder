@@ -8,14 +8,13 @@
 import UIKit
 import MessageUI
 import AudioToolbox
-import RealmSwift
+import CoreData
 
 let appVersion = "2.5"
 
 class NavigationViewController: UIViewController {
    
-    
-    let realm = try!Realm()
+    let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
     let defaults = UserDefaults.standard
     
     var emailBuilder = EmailBuilder()
@@ -178,11 +177,17 @@ extension NavigationViewController: MFMailComposeViewControllerDelegate {
         
     }
     func getEmails()->[String]{
-        
-        let emails =  realm.objects(Contact.self)
         var finalEmail = [""]
+        var emails = [Contacts]()
+        let request: NSFetchRequest<Contacts> = Contacts.fetchRequest()
+        do{
+            emails = try context.fetch(request)
+        }catch{
+            print("Error Fetching data")
+        }
+        
         for email in emails{
-            finalEmail.append(email.email)
+            finalEmail.append(email.recipentMail ?? "")
         }
         return finalEmail
     }

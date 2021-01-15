@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="senderName" optional="YES" attributeType="String"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20A2411" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contacts" representedClassName="Contacts" syncable="YES" codeGenerationType="class">
+        <attribute name="recipentMail" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ListCategory" representedClassName="ListCategory" syncable="YES" codeGenerationType="class">
+        <attribute name="categoryName" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserEntity" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="ListCategory" positionX="-63" positionY="-9" width="128" height="44"/>
+        <element name="Contacts" positionX="-63" positionY="-18" width="128" height="44"/>
     </elements>
 </model>

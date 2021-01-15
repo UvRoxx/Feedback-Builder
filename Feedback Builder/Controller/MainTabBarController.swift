@@ -12,7 +12,7 @@ class MainTabBarController:UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
        //Please change the value of this index to make finlaize the initial item which loads as default when the tab loads
-        self.selectedViewController = self.viewControllers?[1]
+        //self.selectedViewController = self.viewControllers?[1]
         //Refer App delegate didFinishLaunchingWithOptions To edit tint and colour
     }
 }

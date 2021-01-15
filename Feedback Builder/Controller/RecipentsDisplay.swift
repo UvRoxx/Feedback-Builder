@@ -6,50 +6,49 @@
 //
 
 import UIKit
-import RealmSwift
-class ContactsTable: UIViewController,UITableViewDelegate, UITableViewDataSource{
+import CoreData
+class RecipentsDisplay: UIViewController,UITableViewDelegate, UITableViewDataSource{
     
-    var emailInfo:Results<Contact>?
-    let realm = try!Realm()
+    var emailInfo = [Contacts]()
+    let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return emailInfo?.count ?? 1
+        return emailInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "emailCell", for: indexPath)
-        cell.textLabel?.text = emailInfo?[indexPath.row].email ?? "No Emails Found"
+        cell.textLabel?.text = emailInfo[indexPath.row].recipentMail
         return cell
     }
     
     
-//MARK:-Delete Row DeleagteMethod
+    //MARK:-Delete Row DeleagteMethod
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCell.EditingStyle.delete
         {
-            if let deletedEmail = emailInfo?[indexPath.row]{
-                do{
-                    try realm.write{
-                        realm.delete(deletedEmail)
-                        tableView.reloadData()
-                    }
-                    }catch{
-                        print("Error Deleting Email \(error)")
-                    }
-                }
-            }
+            context.delete(emailInfo[indexPath.row])
+            emailInfo.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         load()
-       
+        
     }
     
-
     func load(){
-        emailInfo = realm.objects(Contact.self)
+        let request: NSFetchRequest<Contacts> = Contacts.fetchRequest()
+        do{
+            emailInfo = try context.fetch(request)
+        }catch{
+            print("Error Fetching data")
+        }
     }
+  
 }

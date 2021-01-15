@@ -6,12 +6,10 @@
 //
 
 import Foundation
-import RealmSwift
 
 
 struct EmailBuilder{
     var greet:String = "Respected Team"
-    let defaults = UserDefaults.standard
     var end:String = "\n\nThank You.\nSincerely,\n"
     
    
@@ -19,7 +17,7 @@ struct EmailBuilder{
     
     
     mutating func FinalEmailBuilder(TimerData: Throughput, salesData: SalesLabour, commentData: String)->String {
-        let senderName = defaults.value(forKey: "userName") as? String ?? "Sender Name"
+        let senderName = Shared.shared.defaults.value(forKey: "userName") as? String ?? "Sender Name"
        
             
            

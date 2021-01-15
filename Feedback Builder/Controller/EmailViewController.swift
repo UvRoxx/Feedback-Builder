@@ -6,13 +6,14 @@
 //
 
 import UIKit
-import RealmSwift
+import CoreData
+
 
 
 class EmailViewController: UIViewController {
-    var emailInfo:Results<Contact>?
-    let realm = try!Realm()
-    var emailBrain = EmailBrain()
+    var emailInfo = [Contacts]()
+    let emailBrain = EmailBrain()
+    let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var newEmail: UITextField!
     
     override func viewDidLoad() {
@@ -28,9 +29,9 @@ class EmailViewController: UIViewController {
             if emailBrain.isValidEmail(currentEmail){
                 print("email is valid")
                 
-                let newEmailInfo = Contact()
-                newEmailInfo.email = (currentEmail)
-                save(newEmailInfo)
+                let newEmailInfo = Contacts(context: context)
+                newEmailInfo.recipentMail = (currentEmail)
+                save()
             }else{
                 print("email is invalid")
                 let alert = emailBrain.emailAlert("Error", "Email is Invalid please check the info and try again")
@@ -42,22 +43,18 @@ class EmailViewController: UIViewController {
         
     }
     @IBAction func showEmailTable(_ sender: UIButton) {
-        let tableVC = storyboard?.instantiateViewController(identifier: "ListEmailViewController")as!ContactsTable
+        let tableVC = storyboard?.instantiateViewController(identifier: "ListEmailViewController")as!RecipentsDisplay
         tableVC.emailInfo = emailInfo
         present(tableVC, animated: true, completion: nil)
     }
-    
-    func save(_ savedData:Contact){
+
+    func save(){
         do{
-            try realm.write{
-                realm.add(savedData)
-                print("Save Was Successful")
-            }
+            try context.save()
         }catch{
-            print("Error Saving Email \(error)")
+            print("Error Saving Data")
         }
-}
-    
+    }
 }
 
 extension EmailViewController:UITextFieldDelegate{
