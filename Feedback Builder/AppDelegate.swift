@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //MARK:-Setting Bar color properties
         UITabBar.appearance().barTintColor = .black
         UITabBar.appearance().tintColor = .systemTeal
+        
         return true
     }
 

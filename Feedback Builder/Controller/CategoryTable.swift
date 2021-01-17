@@ -12,6 +12,7 @@ class CategoryTable: UITableViewController {
     
     let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
     let request: NSFetchRequest<ListCategory> = ListCategory.fetchRequest()
+    var currentIndex = 0
     
     var listCategory = [ListCategory]()
     
@@ -68,12 +69,22 @@ class CategoryTable: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentIndex = indexPath.row
+        performSegue(withIdentifier: "gotoItems", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let desitnationVC = segue.destination as! ItemTable
+        desitnationVC.selectedCategory = listCategory[currentIndex]
+        
+    }
+    
     func save(){
         do{
            try context.save()
             tableView.reloadData()
         }catch{
-        fatalError("Error Saving New Cateogyr")
+        print("Error Saving New Category\(error)")
         }
     }
     func load(){
