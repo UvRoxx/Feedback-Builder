@@ -12,16 +12,18 @@ import CoreData
 
 let appVersion = "2.5"
 
-class NavigationViewController: UIViewController {
+class FeedbackVC: UIViewController {
    
     let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
     let defaults = UserDefaults.standard
     
+    //MARK:-View Controller Objects
     var emailBuilder = EmailBuilder()
     let salesDelegate = SalesLaborViewController()
     var salesLabour = SalesLabour()
     var emailBrain = EmailBrain()
     
+    //MARK:-Model Objects
     var currentTimerData = Throughput()
     var currentComment  = Comment()
     var throughput:Throughput?
@@ -118,7 +120,7 @@ class NavigationViewController: UIViewController {
 }
 
 //MARK: -Local Delegates
-extension NavigationViewController:TimerWasSent{
+extension FeedbackVC:TimerWasSent{
     func getShiftTimer(todaysTimer: Throughput) {
         currentTimerData.dayPartTimer = todaysTimer.dayPartTimer
     }
@@ -126,7 +128,7 @@ extension NavigationViewController:TimerWasSent{
     
 }
 
-extension NavigationViewController:commentDataDelegate{
+extension FeedbackVC:commentDataDelegate{
     func thereIsComment(userComment: Comment) {
         currentComment.commentText = userComment.commentText
     }
@@ -134,7 +136,7 @@ extension NavigationViewController:commentDataDelegate{
     
 }
 
-extension NavigationViewController:SalesLaborDelegate{
+extension FeedbackVC:SalesLaborDelegate{
     func didGetSales(salesToday: SalesLabour) {
         salesLabour = salesToday
     }
@@ -147,7 +149,7 @@ extension NavigationViewController:SalesLaborDelegate{
 
 //MARK: -Mail Composer
 
-extension NavigationViewController: MFMailComposeViewControllerDelegate {
+extension FeedbackVC: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         

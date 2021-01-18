@@ -21,6 +21,8 @@
 		101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101EE472256C370A00DCF73B /* SalesLaborViewController.swift */; };
 		103B7D852592C12600AC8DF0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B7D842592C12600AC8DF0 /* WeatherData.swift */; };
 		103B7D8A2593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */; };
+		1050F45325B5C72F0095E68B /* CategoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050F45225B5C72F0095E68B /* CategoryBrain.swift */; };
+		1050F45B25B5E4ED0095E68B /* ItemsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */; };
 		106E9F1A25B182D000F99EDF /* CategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E9F1925B182D000F99EDF /* CategoryTable.swift */; };
 		1079FAC325B17EAC0069891A /* FeedbackModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1079FAC125B17EAC0069891A /* FeedbackModel.xcdatamodeld */; };
 		1079FACF25B180000069891A /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079FACE25B180000069891A /* Shared.swift */; };
@@ -38,7 +40,7 @@
 		10D09C7D25B3C298006C9585 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10D09C7C25B3C298006C9585 /* CloudKit.framework */; };
 		10DCBBCF256A3520009A74CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCBBCE256A3520009A74CD /* AppDelegate.swift */; };
 		10DCBBD1256A3520009A74CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCBBD0256A3520009A74CD /* SceneDelegate.swift */; };
-		10DCBBD3256A3520009A74CD /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCBBD2256A3520009A74CD /* NavigationViewController.swift */; };
+		10DCBBD3256A3520009A74CD /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCBBD2256A3520009A74CD /* FeedbackVC.swift */; };
 		10DCBBD6256A3520009A74CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DCBBD4256A3520009A74CD /* Main.storyboard */; };
 		10DCBBDB256A3525009A74CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DCBBD9256A3525009A74CD /* LaunchScreen.storyboard */; };
 		10DCBBE6256A3526009A74CD /* Feedback_BuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10DCBBE5256A3526009A74CD /* Feedback_BuilderTests.swift */; };
@@ -77,6 +79,8 @@
 		101EE472256C370A00DCF73B /* SalesLaborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesLaborViewController.swift; sourceTree = "<group>"; };
 		103B7D842592C12600AC8DF0 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NothingYouCouldDo-Regular.ttf"; sourceTree = "<group>"; };
+		1050F45225B5C72F0095E68B /* CategoryBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBrain.swift; sourceTree = "<group>"; };
+		1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBrain.swift; sourceTree = "<group>"; };
 		106E9F1925B182D000F99EDF /* CategoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTable.swift; sourceTree = "<group>"; };
 		1079FAC225B17EAC0069891A /* FeedbackModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedbackModel.xcdatamodel; sourceTree = "<group>"; };
 		1079FACE25B180000069891A /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
@@ -96,7 +100,7 @@
 		10DCBBCB256A3520009A74CD /* Feedback Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feedback Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10DCBBCE256A3520009A74CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10DCBBD0256A3520009A74CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		10DCBBD2256A3520009A74CD /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		10DCBBD2256A3520009A74CD /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		10DCBBD5256A3520009A74CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10DCBBDA256A3525009A74CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10DCBBDC256A3525009A74CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -251,7 +255,7 @@
 		10DCBC08256A3978009A74CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				10DCBBD2256A3520009A74CD /* NavigationViewController.swift */,
+				10DCBBD2256A3520009A74CD /* FeedbackVC.swift */,
 				101262EE256AC80F001CBFCE /* ThroughputViewController.swift */,
 				10126319256B819E001CBFCE /* CommentViewController.swift */,
 				101EE472256C370A00DCF73B /* SalesLaborViewController.swift */,
@@ -275,6 +279,8 @@
 				10B215062578D954006AF852 /* EmailBrain.swift */,
 				10B2154C2579097A006AF852 /* ShiftAnalyticsBuilder.swift */,
 				1008519C2591C3E7009AD6E1 /* DateAndTime.swift */,
+				1050F45225B5C72F0095E68B /* CategoryBrain.swift */,
+				1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,12 +426,14 @@
 				108BE54825A4522C00B3E83B /* FBErrors.swift in Sources */,
 				100851932591A44B009AD6E1 /* HomeViewController.swift in Sources */,
 				10B215432578F76C006AF852 /* RecipentsDisplay.swift in Sources */,
-				10DCBBD3256A3520009A74CD /* NavigationViewController.swift in Sources */,
+				1050F45B25B5E4ED0095E68B /* ItemsBrain.swift in Sources */,
+				10DCBBD3256A3520009A74CD /* FeedbackVC.swift in Sources */,
 				10B215072578D954006AF852 /* EmailBrain.swift in Sources */,
 				106E9F1A25B182D000F99EDF /* CategoryTable.swift in Sources */,
 				10B21548257901AD006AF852 /* SettingsViewController.swift in Sources */,
 				100851B52591C8C3009AD6E1 /* QuoteData.swift in Sources */,
 				1079FAC325B17EAC0069891A /* FeedbackModel.xcdatamodeld in Sources */,
+				1050F45325B5C72F0095E68B /* CategoryBrain.swift in Sources */,
 				1079FACF25B180000069891A /* Shared.swift in Sources */,
 				108BE54D25A457FF00B3E83B /* FBControllers.swift in Sources */,
 				10DCBBCF256A3520009A74CD /* AppDelegate.swift in Sources */,

@@ -6,34 +6,42 @@
 //
 
 import UIKit
-import CoreData
 class ItemTable: UITableViewController {
-
-    let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
-
     
-    let request: NSFetchRequest<Item> = Item.fetchRequest()
+    
+    let itemBrain = ItemsBrain()
     var items = [Item]()
-
+    
     var selectedCategory:ListCategory?{
         didSet{
-            load()
+            itemBrain.loadItems(selectedCategory: selectedCategory) { (error, loadedItems) in
+                if let e = error{
+                    print("Error Loading \(e)")
+                }
+                else{
+                    items = loadedItems!
+                }
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
-
     
+    //MARK:-Reset Checklist Method
     @IBAction func resetCheckList(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title:"Reset The Check-List?", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:"Yes", style: .default, handler: { (_) in
             for item in self.items{
                 item.done = false
-                self.save()
+                if let error = self.itemBrain.save(){
+                    print("Error Occoured Resetting \(error)")
+                }else{
+                    self.tableView.reloadData()
+                }
             }
         }))
         alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: { (_) in
@@ -43,26 +51,27 @@ class ItemTable: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    
+//MARK:-Add New Item Function
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         var itemName = UITextField()
         
-        let newItem = Item(context: context)
         
         let alert = UIAlertController(title: "New Item", message: "", preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Add", style: .default) { (_) in
-        
+            
             if let finalInput = itemName.text
             {
                 if finalInput != ""{
-                    newItem.itemName = finalInput
-                    newItem.done = false
-                    newItem.parentCategory = self.selectedCategory
-                    self.items.append(newItem)
-                    self.save()
-                    print("Success")
+                    self.itemBrain.addNewItem(parentCategory: self.selectedCategory, itemName: finalInput) { (error, savedItems) in
+                        if let e = error{
+                            print("Error Occuereds Adding New Item \(e)")
+                        }else{
+                            self.items = savedItems!
+                            self.tableView.reloadData()
+                        }
+                    }
                 }
-              
+                
             }
             
         }
@@ -74,8 +83,8 @@ class ItemTable: UITableViewController {
     }
     
     // MARK: - Table view data source
-
- 
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -91,41 +100,26 @@ class ItemTable: UITableViewController {
     
     //MARK:-Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         items[indexPath.row].done = !items[indexPath.row].done
-        save()
+        if let error = itemBrain.save(){
+            print(error)
+        }else{
+            tableView.reloadData()
+        }
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            context.delete(items[indexPath.row])
-            items.remove(at: indexPath.row)
-            save()
-        }
-    }
-    //MARK:-Save and Load Function
-
-    func save(){
-        do{
-           try context.save()
-            tableView.reloadData()
-        }catch{
-        fatalError("Error Saving Item \(error)")
-        }
-        
-    }
-    func load(){
-        
-        do{
-           items = try context.fetch(request)
-            var finalItems = [Item]()
-            for item in items{
-                if item.parentCategory == selectedCategory{
-                    finalItems.append(item)
+            itemBrain.deleteItem(deletedIndex: indexPath) { (error, itemsAfterDeletion) in
+                if let e = error{
+                    print("There was an error deleting \(e)")
+                }else{
+                    self.items = itemsAfterDeletion!
+                    self.tableView.reloadData()
                 }
-                items = finalItems
             }
-        print("Success loading data")
-        }catch{
-            print("Error loading data")
         }
     }
+    
+    
 }
