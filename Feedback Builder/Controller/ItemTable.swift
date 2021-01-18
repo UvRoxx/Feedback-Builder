@@ -27,6 +27,23 @@ class ItemTable: UITableViewController {
         
     }
 
+    
+    @IBAction func resetCheckList(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title:"Reset The Check-List?", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Yes", style: .default, handler: { (_) in
+            for item in self.items{
+                item.done = false
+                self.save()
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func addNewItem(_ sender: UIBarButtonItem) {
         var itemName = UITextField()
         
@@ -72,7 +89,19 @@ class ItemTable: UITableViewController {
     }
     
     
-    //MARK:-Save Function
+    //MARK:-Delegate Methods
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        items[indexPath.row].done = !items[indexPath.row].done
+        save()
+    }
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            context.delete(items[indexPath.row])
+            items.remove(at: indexPath.row)
+            save()
+        }
+    }
+    //MARK:-Save and Load Function
 
     func save(){
         do{
