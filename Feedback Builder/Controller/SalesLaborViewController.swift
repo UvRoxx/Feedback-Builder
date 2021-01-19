@@ -52,8 +52,8 @@ class SalesLaborViewController: UIViewController {
         }
 
         salesDelegate?.didGetSales(salesToday: shiftSales)
-        self.dismiss(animated: true, completion: nil)
-        
+        navigationController?.popToRootViewController(animated: true)
+
         
     }
     

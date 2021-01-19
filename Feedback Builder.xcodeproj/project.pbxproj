@@ -21,6 +21,10 @@
 		101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101EE472256C370A00DCF73B /* SalesLaborViewController.swift */; };
 		103B7D852592C12600AC8DF0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B7D842592C12600AC8DF0 /* WeatherData.swift */; };
 		103B7D8A2593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */; };
+		1049B0DC25B661B800905B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DCBBD4256A3520009A74CD /* Main.storyboard */; };
+		1049B0E025B661B900905B85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10DCBBD4256A3520009A74CD /* Main.storyboard */; };
+		1049B0E425B6625100905B85 /* CategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E9F1925B182D000F99EDF /* CategoryTable.swift */; };
+		1049B0E825B6625200905B85 /* CategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E9F1925B182D000F99EDF /* CategoryTable.swift */; };
 		1050F45325B5C72F0095E68B /* CategoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050F45225B5C72F0095E68B /* CategoryBrain.swift */; };
 		1050F45B25B5E4ED0095E68B /* ItemsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */; };
 		106E9F1A25B182D000F99EDF /* CategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E9F1925B182D000F99EDF /* CategoryTable.swift */; };
@@ -400,6 +404,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1049B0DC25B661B800905B85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1049B0E025B661B900905B85 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1049B0E425B6625100905B85 /* CategoryTable.swift in Sources */,
 				10DCBBE6256A3526009A74CD /* Feedback_BuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1049B0E825B6625200905B85 /* CategoryTable.swift in Sources */,
 				10DCBBF1256A3526009A74CD /* Feedback_BuilderUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +567,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -613,6 +622,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -631,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.uvarma;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uvarma.feedbackBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -653,7 +663,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.uvarma;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uvarma.feedbackBuilder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

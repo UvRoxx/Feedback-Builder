@@ -81,7 +81,7 @@ class ThroughputViewController: UIViewController {
     @IBAction func submitButton(_ sender: UIButton) {
       
         self.timerDelegate.getShiftTimer(todaysTimer: shiftInfo)
-        self.dismiss(animated: true, completion:nil)
+        navigationController?.popToRootViewController(animated: true)
         
         
     }

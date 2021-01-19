@@ -31,7 +31,7 @@ class CommentViewController: UIViewController {
         userComment.commentText = commentData.text
         
         commentDelegate?.thereIsComment(userComment: userComment)
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popToRootViewController(animated: true)
     }
     func restoreState(){
         commentData.text = userComment.commentText

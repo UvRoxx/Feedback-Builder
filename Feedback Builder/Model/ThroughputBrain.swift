@@ -22,24 +22,24 @@ struct ThroughputBrain{
             }
             break
         case 3:
-            if(speedOfSerive>130){
+            if(speedOfSerive>160){
                 displayColor = errorColor
             }
             break
         case 4:
-            if(speedOfSerive>130){
+            if(speedOfSerive>150){
                 displayColor = errorColor
                 
             }
             break
         case 5:
-            if(speedOfSerive>130){
+            if(speedOfSerive>160){
                 displayColor = errorColor
                 
             }
             break
         case 6:
-            if(speedOfSerive>130){
+            if(speedOfSerive>170){
                 displayColor = errorColor
                 
             }

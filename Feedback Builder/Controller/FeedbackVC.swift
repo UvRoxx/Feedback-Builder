@@ -26,12 +26,19 @@ class FeedbackVC: UIViewController {
     //MARK:-Model Objects
     var currentTimerData = Throughput()
     var currentComment  = Comment()
-    var throughput:Throughput?
+    //MARK:-CHECK HERE FOR CORRECTION
+    //var throughput:Throughput?
     
+    var segueDestination = ""
     @IBOutlet var buttonDesign: [UIButton]!
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+
+    }
+   
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -50,32 +57,19 @@ class FeedbackVC: UIViewController {
     
     @IBAction func buttonClicked(_ sender:UIButton){
         switch sender.tag{
-        case 1:let throughputVC = storyboard?.instantiateViewController(identifier:VC.throughput.rawValue) as! ThroughputViewController
-            
-            throughputVC.timerDelegate = self
-            
-            throughputVC.shiftInfo = currentTimerData
-            throughputVC.modalPresentationStyle = .fullScreen
-            present(throughputVC, animated: true, completion: nil)
+        case 1:
+            segueDestination = "Throughput"
+            performSegue(withIdentifier: "gotoThroughput", sender: self)
             break
-       
-        case 2: let salesVC = storyboard?.instantiateViewController(identifier: VC.salesLabour.rawValue)as!SalesLaborViewController
-            
-            salesVC.salesDelegate = self
-            
-            salesVC.shiftSales = salesLabour
-            salesVC.modalPresentationStyle = .fullScreen
-            present(salesVC, animated: true, completion: nil)
-       
-        case 3: let commentVC = storyboard?.instantiateViewController(identifier:VC.comment.rawValue) as! CommentViewController
-            
-            commentVC.commentDelegate = self
-            
-            commentVC.userComment = currentComment
-            commentVC.modalPresentationStyle = .fullScreen
-            present(commentVC, animated: true, completion: nil)
-            
-        case 4: let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText)
+        case 2:
+            segueDestination = "SalesAndLabour"
+            performSegue(withIdentifier: "gotoSalesAndLabour", sender: self)
+            break
+        case 3:
+            segueDestination = "Comments"
+            performSegue(withIdentifier: "gotoComment", sender: self)
+        case 4:
+            let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText)
             print(email)//Use this to see output in VM
             showMailComposer(emailBody: email)//Use this to see output in actual device
         
@@ -85,7 +79,33 @@ class FeedbackVC: UIViewController {
         
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch (segueDestination){
+        case "Throughput":
+            let destinationVC = segue.destination as! ThroughputViewController
+            destinationVC.timerDelegate = self
+            destinationVC.shiftInfo = currentTimerData
+            break
+            
+        case "Comments":
+            let destinationVC = segue.destination as! CommentViewController
+            destinationVC.commentDelegate = self
+            destinationVC.userComment = currentComment
+            break
+        case "SalesAndLabour":
+            let destinationVC = segue.destination as! SalesLaborViewController
+            destinationVC.salesDelegate = self
+            destinationVC.shiftSales = salesLabour
+            break
+        default:
+            present(emailBrain.emailAlert("Unexpxected Error Occoured", "Please retry the action"),animated: true, completion: nil)
+        break
+
+        }
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        tabBarController?.tabBar.isHidden = true
+
+    }
     
 
     //MARK: -Present Mail Composer
