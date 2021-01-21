@@ -16,11 +16,13 @@ class CategoryTable: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoryBrain.loadCategory { (retrivedData, savedCategories) in
-            if retrivedData{
-                listCategory = savedCategories!
+        categoryBrain.loadCategory { (error, savedCategories) in
+            if let e = error{
+                print("Error Loading Saved Categories \(e)")
+
             }else{
-                print("Error Loading Saved Categories")
+                listCategory = savedCategories!
+
             }
         }
     }

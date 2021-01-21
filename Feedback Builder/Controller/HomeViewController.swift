@@ -61,7 +61,7 @@ extension HomeViewController:WeatherDelegate{
             self.weatherTemp.text = "\(weatherTemp)°C"
             self.defaults.set(weatherTemp, forKey: "savedWeatherTemp")
             self.defaults.set(weatherCode, forKey: "savedWeatherCode")
-            self.weatherImage.image =  UIImage(systemName:weatherCode)?.withRenderingMode(.alwaysOriginal)
+            self.weatherImage.image =  UIImage(systemName:weatherCode)?.withRenderingMode(.alwaysTemplate)
             self.locationName.text = locationName
         }
     }
@@ -79,7 +79,7 @@ extension HomeViewController:WeatherDelegate{
         
         if let temp = defaults.value(forKey: "savedWeatherTemp"), let weatherCode = defaults.value(forKey: "savedWeatherCode"),let quote = defaults.value(forKey: "quoteData"){
             weatherTemp.text = temp as? String
-            weatherImage.image = UIImage(systemName: (weatherCode as! String))?.withRenderingMode(.alwaysOriginal)
+            weatherImage.image = UIImage(systemName: (weatherCode as! String))?.withRenderingMode(.alwaysTemplate)
             quoteOfTheDayContent.text =  quote as? String
             
             

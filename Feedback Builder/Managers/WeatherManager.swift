@@ -52,19 +52,19 @@ func getWeatherIconCode(_ conditionId:Int)->String{
     var conditionName:String {
         switch conditionId{
         case 200...232:
-            return "cloud.bolt.fill"
+            return "cloud.bolt"
         case 300...321:
-            return "cloud.drizzle.fill"
+            return "cloud.drizzle"
         case 500...531:
-            return "cloud.rain.fill"
+            return "cloud.rain"
         case 600...622:
-            return "cloud.snow.fill"
+            return "cloud.snow"
         case 701...781:
-            return "cloud.fog.fill"
+            return "cloud.fog"
         case 800:
-            return "sun.max.fill"
+            return "sun.max"
         case 801...804:
-            return "cloud.bolt.fill"
+            return "cloud.bolt"
         default:
             return "cloud.fill"
         }

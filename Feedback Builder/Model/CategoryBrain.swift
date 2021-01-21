@@ -31,15 +31,14 @@ class CategoryBrain{
     }
     
     //MARK:Load Category
-    func loadCategory(completion:(Bool,[ListCategory]?)->Void){
+    func loadCategory(completion:(String?,[ListCategory]?)->Void){
         
         do{
            listCategory = try context.fetch(categoryRequest)
-            completion(true,listCategory)
+            completion(nil,listCategory)
             print("Success loading data")
         }catch{
-            completion(false,nil)
-            print("Error loading category data\(error)")
+            completion(error.localizedDescription,nil)
         }
     }
     //MARK:Delete Category

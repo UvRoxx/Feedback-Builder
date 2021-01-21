@@ -27,6 +27,8 @@
 		1049B0E825B6625200905B85 /* CategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E9F1925B182D000F99EDF /* CategoryTable.swift */; };
 		1050F45325B5C72F0095E68B /* CategoryBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050F45225B5C72F0095E68B /* CategoryBrain.swift */; };
 		1050F45B25B5E4ED0095E68B /* ItemsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */; };
+		105D4F1E25B99CE00099ABFD /* AddListTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D4F1D25B99CE00099ABFD /* AddListTableVC.swift */; };
+		105D4F2325B9E1460099ABFD /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105D4F2225B9E1460099ABFD /* ListBuilder.swift */; };
 		106E9F1A25B182D000F99EDF /* CategoryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E9F1925B182D000F99EDF /* CategoryTable.swift */; };
 		1079FAC325B17EAC0069891A /* FeedbackModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1079FAC125B17EAC0069891A /* FeedbackModel.xcdatamodeld */; };
 		1079FACF25B180000069891A /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1079FACE25B180000069891A /* Shared.swift */; };
@@ -85,6 +87,8 @@
 		103B7D892593431400AC8DF0 /* NothingYouCouldDo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NothingYouCouldDo-Regular.ttf"; sourceTree = "<group>"; };
 		1050F45225B5C72F0095E68B /* CategoryBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBrain.swift; sourceTree = "<group>"; };
 		1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsBrain.swift; sourceTree = "<group>"; };
+		105D4F1D25B99CE00099ABFD /* AddListTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableVC.swift; sourceTree = "<group>"; };
+		105D4F2225B9E1460099ABFD /* ListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilder.swift; sourceTree = "<group>"; };
 		106E9F1925B182D000F99EDF /* CategoryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTable.swift; sourceTree = "<group>"; };
 		1079FAC225B17EAC0069891A /* FeedbackModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedbackModel.xcdatamodel; sourceTree = "<group>"; };
 		1079FACE25B180000069891A /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				100851972591AC0C009AD6E1 /* MainTabBarController.swift */,
 				106E9F1925B182D000F99EDF /* CategoryTable.swift */,
 				10D09C6725B3B006006C9585 /* ItemTable.swift */,
+				105D4F1D25B99CE00099ABFD /* AddListTableVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 				1008519C2591C3E7009AD6E1 /* DateAndTime.swift */,
 				1050F45225B5C72F0095E68B /* CategoryBrain.swift */,
 				1050F45A25B5E4ED0095E68B /* ItemsBrain.swift */,
+				105D4F2225B9E1460099ABFD /* ListBuilder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105D4F1E25B99CE00099ABFD /* AddListTableVC.swift in Sources */,
 				1008519D2591C3E7009AD6E1 /* DateAndTime.swift in Sources */,
 				101EE473256C370A00DCF73B /* SalesLaborViewController.swift in Sources */,
 				1012631A256B819E001CBFCE /* CommentViewController.swift in Sources */,
@@ -437,6 +444,7 @@
 				10B215072578D954006AF852 /* EmailBrain.swift in Sources */,
 				106E9F1A25B182D000F99EDF /* CategoryTable.swift in Sources */,
 				10B21548257901AD006AF852 /* SettingsViewController.swift in Sources */,
+				105D4F2325B9E1460099ABFD /* ListBuilder.swift in Sources */,
 				100851B52591C8C3009AD6E1 /* QuoteData.swift in Sources */,
 				1079FAC325B17EAC0069891A /* FeedbackModel.xcdatamodeld in Sources */,
 				1050F45325B5C72F0095E68B /* CategoryBrain.swift in Sources */,

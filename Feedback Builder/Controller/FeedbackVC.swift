@@ -22,10 +22,12 @@ class FeedbackVC: UIViewController {
     let salesDelegate = SalesLaborViewController()
     var salesLabour = SalesLabour()
     var emailBrain = EmailBrain()
+    var listBuilder = ListBuilder()
     
     //MARK:-Model Objects
-    var currentTimerData = Throughput()
-    var currentComment  = Comment()
+    var currentTimerData    = Throughput()
+    var currentComment      = Comment()
+    var listsAdded          = [IndexPath]()
     //MARK:-CHECK HERE FOR CORRECTION
     //var throughput:Throughput?
     
@@ -35,8 +37,6 @@ class FeedbackVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: true)
-        self.tabBarController?.tabBar.isHidden = false
-
     }
    
     
@@ -69,10 +69,18 @@ class FeedbackVC: UIViewController {
             segueDestination = "Comments"
             performSegue(withIdentifier: "gotoComment", sender: self)
         case 4:
+            let desitnationVC = storyboard?.instantiateViewController(identifier: "AddListTableVC")as!AddListTableVC
+            desitnationVC.listToMailDelegate = self
+            present(desitnationVC, animated: true, completion: nil)
+            
+        break
+        case 5:
             let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText)
             print(email)//Use this to see output in VM
+            listBuilder.buildListForMail(listsSelected: listsAdded)
             showMailComposer(emailBody: email)//Use this to see output in actual device
         
+       
         default:
             break
         }
@@ -97,6 +105,7 @@ class FeedbackVC: UIViewController {
             destinationVC.salesDelegate = self
             destinationVC.shiftSales = salesLabour
             break
+        
         default:
             present(emailBrain.emailAlert("Unexpxected Error Occoured", "Please retry the action"),animated: true, completion: nil)
         break
@@ -160,12 +169,15 @@ extension FeedbackVC:SalesLaborDelegate{
     func didGetSales(salesToday: SalesLabour) {
         salesLabour = salesToday
     }
-    
+}
+
+extension FeedbackVC:addListToMail{
+    func addListData(indexsSelected: [IndexPath]) {
+        listsAdded = indexsSelected
+    }
     
     
 }
-
-
 
 //MARK: -Mail Composer
 
@@ -175,6 +187,7 @@ extension FeedbackVC: MFMailComposeViewControllerDelegate {
         
         if let _ = error {
             //Show error alert
+            
             controller.dismiss(animated: true)
             return
         }
@@ -199,7 +212,7 @@ extension FeedbackVC: MFMailComposeViewControllerDelegate {
         
     }
     func getEmails()->[String]{
-        var finalEmail = [""]
+        var finalEmail = [String]()
         var emails = [Contacts]()
         let request: NSFetchRequest<Contacts> = Contacts.fetchRequest()
         do{
