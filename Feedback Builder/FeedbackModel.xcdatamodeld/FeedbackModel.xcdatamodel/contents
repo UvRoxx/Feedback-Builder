@@ -10,12 +10,11 @@
     </entity>
     <entity name="ListCategory" representedClassName="ListCategory" syncable="YES" codeGenerationType="class">
         <attribute name="categoryName" attributeType="String" defaultValueString="MyCategory"/>
-        <attribute name="include" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="parentCategory" inverseEntity="Item"/>
     </entity>
     <elements>
         <element name="Contacts" positionX="-63" positionY="-18" width="128" height="44"/>
         <element name="Item" positionX="27.30078125" positionY="155.62890625" width="128" height="74"/>
-        <element name="ListCategory" positionX="-164.60546875" positionY="149.1015625" width="128" height="74"/>
+        <element name="ListCategory" positionX="-164.60546875" positionY="149.1015625" width="128" height="59"/>
     </elements>
 </model>

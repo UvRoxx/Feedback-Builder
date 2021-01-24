@@ -8,14 +8,15 @@
 import UIKit
 
 protocol addListToMail {
-    func addListData(indexsSelected:[IndexPath])
+    func addListData(indexsSelected:[Int])
 }
 
 class AddListTableVC: UITableViewController {
     var listToMailDelegate : addListToMail!
-    var categoriesAdded    = [IndexPath]()
+    var categoriesAdded    = [Int]()
     let categoryBrain      = CategoryBrain()
     var listCategory       = [ListCategory]()
+    
     override func viewDidLoad() {
         
         
@@ -25,11 +26,16 @@ class AddListTableVC: UITableViewController {
                 print("error loading categories \(e)")
             }else{
                 listCategory = loadedCartgories!
+                
             }
         }
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        listToMailDelegate.addListData(indexsSelected: categoriesAdded)
+        print("categories sent= \(categoriesAdded)")
+    }
     
     //MARK:-Data Source Methods
     
@@ -38,9 +44,10 @@ class AddListTableVC: UITableViewController {
         return listCategory.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "categoryCell")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "checkCategoryCell")
         cell.textLabel?.text = listCategory[indexPath.row].categoryName
-        if listCategory[indexPath.row].include{
+        
+        if categoriesAdded.contains(indexPath.row){
             cell.accessoryType = .checkmark
             
         }
@@ -49,27 +56,24 @@ class AddListTableVC: UITableViewController {
     //MARK:DELEGATE METHOD
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        listCategory[indexPath.row].include = !listCategory[indexPath.row].include
-        if listCategory[indexPath.row].include{
-            if !categoriesAdded.contains(indexPath){
-                categoriesAdded.append(indexPath)
-            }
-        }else{
-            if categoriesAdded.contains(indexPath){
-                categoriesAdded.remove(at: categoriesAdded.firstIndex(of: indexPath)!)
-            }
+        
+        
+        if !categoriesAdded.contains(indexPath.row){
+            categoriesAdded.append(indexPath.row)
+        }
+        else if categoriesAdded.contains(indexPath.row){
+            categoriesAdded.remove(at: categoriesAdded.firstIndex(of: indexPath.row)!)
         }
         tableView.reloadData()
         print(categoriesAdded)
+        
     }
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        listToMailDelegate.addListData(indexsSelected: categoriesAdded)
-    }
-    
-   
-    
     
 }
+
+
+
+
+
+
+

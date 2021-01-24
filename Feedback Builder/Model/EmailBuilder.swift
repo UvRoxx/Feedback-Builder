@@ -16,7 +16,7 @@ struct EmailBuilder{
      
     
     
-    mutating func FinalEmailBuilder(TimerData: Throughput, salesData: SalesLabour, commentData: String)->String {
+    mutating func FinalEmailBuilder(TimerData: Throughput, salesData: SalesLabour, commentData: String,checkListContent:String)->String {
         let senderName = Shared.shared.defaults.value(forKey: "userName") as? String ?? "Sender Name"
        
             
@@ -26,7 +26,7 @@ struct EmailBuilder{
             
             let commentDisplay:String = "\n---------------------------\nPersonal Comments\n---------------------------\n\(commentData)"
             
-        let finalMail = "\(greet)\(finalTimerDisplay)\(salesDisplay)\(commentDisplay)\(end)\(senderName)\n\n\nMade with FeedbackBuilder Ver\(appVersion)"
+        let finalMail = "\(greet)\(finalTimerDisplay)\(salesDisplay)\(checkListContent)\(commentDisplay)\(end)\(senderName)\n\n\nMade with FeedbackBuilder Ver\(appVersion)"
             return finalMail
            
     }

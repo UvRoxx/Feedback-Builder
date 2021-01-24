@@ -17,19 +17,19 @@ class FeedbackVC: UIViewController {
     let context = ((UIApplication.shared.delegate)as!AppDelegate).persistentContainer.viewContext
     let defaults = UserDefaults.standard
     
-    //MARK:-View Controller Objects
+    //MARK:-Model Objects
     var emailBuilder = EmailBuilder()
     let salesDelegate = SalesLaborViewController()
     var salesLabour = SalesLabour()
     var emailBrain = EmailBrain()
     var listBuilder = ListBuilder()
-    
-    //MARK:-Model Objects
+    var listContent = String()
+    //MARK:-DataModel Objects
     var currentTimerData    = Throughput()
     var currentComment      = Comment()
-    var listsAdded          = [IndexPath]()
-    //MARK:-CHECK HERE FOR CORRECTION
-    //var throughput:Throughput?
+    var listsAdded          = [Int]()
+   
+  
     
     var segueDestination = ""
     @IBOutlet var buttonDesign: [UIButton]!
@@ -71,13 +71,17 @@ class FeedbackVC: UIViewController {
         case 4:
             let desitnationVC = storyboard?.instantiateViewController(identifier: "AddListTableVC")as!AddListTableVC
             desitnationVC.listToMailDelegate = self
+            desitnationVC.categoriesAdded = listsAdded
             present(desitnationVC, animated: true, completion: nil)
             
         break
         case 5:
-            let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText)
+            listContent = listBuilder.buildListForMail(listsSelected: listsAdded)
+            
+            let email = emailBuilder.FinalEmailBuilder(TimerData: currentTimerData, salesData: salesLabour, commentData: currentComment.commentText, checkListContent: listContent)
+            
             print(email)//Use this to see output in VM
-            listBuilder.buildListForMail(listsSelected: listsAdded)
+            
             showMailComposer(emailBody: email)//Use this to see output in actual device
         
        
@@ -172,9 +176,12 @@ extension FeedbackVC:SalesLaborDelegate{
 }
 
 extension FeedbackVC:addListToMail{
-    func addListData(indexsSelected: [IndexPath]) {
+    func addListData(indexsSelected: [Int]) {
         listsAdded = indexsSelected
+        print("Recived")
     }
+    
+  
     
     
 }
